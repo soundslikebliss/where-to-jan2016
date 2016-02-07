@@ -43,6 +43,12 @@
     </div> <!-- /post-header -->
 										                                    	    
     <div class="post-content">
+
+    	<!--<?php var_dump(get_field('location_image')); ?>-->
+    	<?php $location_image = get_field('location_image'); ?>
+    	<?php echo '<img src="' .$location_image['sizes']['large']. '"/>'; ?>
+    	<br />
+    	<br />
     	    		            			            	                                                                                            
 		<?php the_content(); ?>
 				

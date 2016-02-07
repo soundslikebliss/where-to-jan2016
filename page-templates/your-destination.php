@@ -15,7 +15,9 @@
 		$page = get_page_by_title( 'alaska', OBJECT, 'post' );
 	}
 
+
 	$title = get_the_title($page->ID);
+	$content = $page->post_content; 
 ?>
 
 
@@ -43,6 +45,14 @@
 							<p><?php edit_post_link( __('Edit', 'lingonberry') ); ?></p>
 						
 						<?php endif; ?>
+
+						<!--<?php var_dump(get_field('location_image', $page->ID)); ?>-->
+						<?php $location_image = get_field('location_image', $page->ID); ?>
+						<?php echo '<img src="' .$location_image['sizes']['large']. '"/>'; ?>
+						<br />
+						<br />
+
+						<?php echo $content; ?>
 															            			                        
 					</div> <!-- /post-content -->
 					
